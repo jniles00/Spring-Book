@@ -7,6 +7,5 @@ import com.qa.books.entity.Book;
 
 @Repository
 public interface BookRepo extends JpaRepository<Book, Long>{
-
 	
 }

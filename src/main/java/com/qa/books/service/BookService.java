@@ -65,6 +65,4 @@ public class BookService implements ServiceMethods<Book>{
 		this.repo.deleteById(id);
 		return false;
 	}
-	
-	
 }
