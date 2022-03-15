@@ -102,11 +102,12 @@ public class Book {
 	// To String
 	@Override
 	public String toString() {
-		return "Book [ID: " + id + ",\n"
+		return "\n"
+				+ "Book ID: " + id + ",\n"
 				+ "Name: " + name + ",\n"
 				+ "Genre: " + genre + ",\n"
 				+ "Rating: " + rating + ",\n"
-				+ "Price: " + price + "\n";
+				+ "Price: " + price;
 	}
 	
 	// Hash Code

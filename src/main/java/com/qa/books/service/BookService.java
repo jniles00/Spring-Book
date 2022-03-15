@@ -3,9 +3,12 @@ package com.qa.books.service;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
 import com.qa.books.entity.Book;
 import com.qa.books.repo.BookRepo;
 
+@Service
 public class BookService implements ServiceMethods<Book>{
 
 	// Creates a BookRepo variable
@@ -63,6 +66,6 @@ public class BookService implements ServiceMethods<Book>{
 	@Override
 	public boolean delete(long id) {
 		this.repo.deleteById(id);
-		return false;
+		return !this.repo.existsById(id);
 	}
 }
