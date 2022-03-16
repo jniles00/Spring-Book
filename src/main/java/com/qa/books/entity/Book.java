@@ -13,12 +13,12 @@ import javax.validation.constraints.Min;
 @Entity
 public class Book {
 
-	// auto generate ID and puts into ID column
+	// Auto generate ID and puts into ID column
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	// name has to be a String and unique
+	// Name has to be a String and unique
 	@Column(unique = true, nullable = false)
 	private String name;
 	
