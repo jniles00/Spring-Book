@@ -1,8 +1,10 @@
 package com.qa.books.controller;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -20,7 +22,6 @@ import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.Sql.ExecutionPhase;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.RequestBuilder;
-import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.ResultMatcher;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -95,6 +96,7 @@ public class BookControllerIntergrationTest {
 		this.mvc.perform(req).andExpect(checkStatus).andExpect(checkBody);	
 		}
 	
+	// Test to check that a book object can be updated and information returned
 	@Test
 	public void testUpdate() throws Exception{
 		
@@ -104,18 +106,28 @@ public class BookControllerIntergrationTest {
 		Book updateBook = new Book(1L, "My Hero Academia", "Shonen", 9, 7);
 		String updateBookAsJSon = this.mapper.writeValueAsString(updateBook);
 		
-		ResultActions response = this.mvc.perform(put("/book/update/1").contentType(MediaType.APPLICATION_JSON).content(testBookAsJSon))
-		 .andExpect(status().isAccepted());
-//		 .andExpect(content().json(updateBookAsJSon));
+		this.mvc.perform(get("/book/readById/1")).andDo(print());
 		
-		System.out.println(response);
 		
+		this.mvc.perform(put("/book/update/1").contentType(MediaType.APPLICATION_JSON)
+							 .content(updateBookAsJSon))
+							 .andExpect(status().isAccepted())
+							 .andExpect(content().json(updateBookAsJSon));
+			
 //		RequestBuilder reqUpdate = put("/book/update/1").contentType(MediaType.APPLICATION_JSON).content(testBookAsJSon);
-//		
-//		ResultMatcher checkStatus = status().isAccepted();
-//		
+//		ResultMatcher checkStatus = status().isAccepted()
 //		ResultMatcher checkBody = content().json(updateBookAsJSon);
-//		
 //		this.mvc.perform(reqUpdate).andExpect(checkStatus).andExpect(checkBody);
+	}
+	
+	// Test to delete a book object
+	@Test
+	public void testDelete() throws Exception {
+	
+		RequestBuilder req = delete("/book/delete/1").contentType(MediaType.APPLICATION_JSON);
+		
+		ResultMatcher checkStatus = status().isNoContent();
+			
+		this.mvc.perform(req).andExpect(checkStatus);
 	}
 }
