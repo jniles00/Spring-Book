@@ -11,6 +11,7 @@ public class BookTest {
 
 	@Test
 	public void testEquals() {
+		
 		EqualsVerifier.forClass(Book.class).usingGetClass().verify();
 	}
 	

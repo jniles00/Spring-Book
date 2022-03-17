@@ -89,7 +89,7 @@ public class BookControllerUnitTest {
 	@Test
 	public void deleteTest() {
 
-		//
+		// Checks the ID of the object that is going to be deleted then returns true
 		Mockito.when(this.service.delete(Mockito.anyLong())).thenReturn(true);
 
 		ResponseEntity<Boolean> response = new ResponseEntity<Boolean>(HttpStatus.NO_CONTENT);

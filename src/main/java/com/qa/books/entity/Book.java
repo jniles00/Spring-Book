@@ -128,5 +128,4 @@ public class Book {
 		return Objects.equals(genre, other.genre) && Objects.equals(name, other.name)
 				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price) && rating == other.rating;
 	}
-
 }
