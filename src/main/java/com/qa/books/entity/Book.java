@@ -13,12 +13,12 @@ import javax.validation.constraints.Min;
 @Entity
 public class Book {
 
-	// auto generate ID and puts into ID column
+	// Auto generate ID and puts into ID column
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	// name has to be a String and unique
+	// Name has to be a String and unique
 	@Column(unique = true, nullable = false)
 	private String name;
 	
@@ -31,13 +31,13 @@ public class Book {
 	@Column
 	@Min(1)		// The price can only be a min of 1
 	@Max(100)	// or a max of 100
-	private int price;
+	private double price;
 	
 	// Default Constructor
 	public Book() {}
 
 	// Constructor for Book object WITHOUT ID
-	public Book(String name, String genre, int rating, @Min(1) @Max(100) int price) {
+	public Book(String name, String genre, int rating, @Min(1) @Max(100) double price) {
 		super();
 		this.name = name;
 		this.genre = genre;
@@ -46,7 +46,7 @@ public class Book {
 	}
 
 	// Constructor for Book object WITH ID
-	public Book(long id, String name, String genre, int rating, @Min(1) @Max(100) int price) {
+	public Book(long id, String name, String genre, int rating, @Min(1) @Max(100) double price) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -89,11 +89,11 @@ public class Book {
 		this.rating = rating;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(int price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
@@ -102,17 +102,18 @@ public class Book {
 	// To String
 	@Override
 	public String toString() {
-		return "Book [ID: " + id + ",\n"
+		return "\n"
+				+ "Book ID: " + id + ",\n"
 				+ "Name: " + name + ",\n"
 				+ "Genre: " + genre + ",\n"
 				+ "Rating: " + rating + ",\n"
-				+ "Price: " + price + "\n";
+				+ "Price: " + price;
 	}
-
+	
 	// Hash Code
 	@Override
 	public int hashCode() {
-		return Objects.hash(genre, id, name, price, rating);
+		return Objects.hash(genre, name, price, rating);
 	}
 
 	@Override
@@ -124,7 +125,7 @@ public class Book {
 		if (getClass() != obj.getClass())
 			return false;
 		Book other = (Book) obj;
-		return Objects.equals(genre, other.genre) && id == other.id && Objects.equals(name, other.name)
-				&& price == other.price && rating == other.rating;
+		return Objects.equals(genre, other.genre) && Objects.equals(name, other.name)
+				&& Double.doubleToLongBits(price) == Double.doubleToLongBits(other.price) && rating == other.rating;
 	}
 }
