@@ -1,8 +1,14 @@
 # Spring-Book
 
 ## Why are we doing this?
-The purpose of this project was to demonstrate all the skills and tools we have acquired whilst on this bootcamp. This included Agile methodology – which is a common project management approach used within the software development industry. It is commonly used in conjunction with some form of management tool, for this project they were Jira and Git.
-Jira is a project management tool that allows users to create tasks that can be put into sprints, which are set periods of time in which tasks are to be completed. Git is another form of project management, also known as version control. This allows users to 
+The purpose of this project was to demonstrate all the skills and tools we have acquired whilst on this bootcamp. This included:
+Agile methodology – being able to work 
+Jira – using a scrum board that kept track of tasks.
+Git – used for version control and project management.
+Java – object orientated proramming language that was used to create the back end for the API.
+Postman – used to call functions from the API.
+H2 – a database that was used to store the information from the back end.
+Created along with these were a Risk Assessment that identified any pontential risks and ways to mitigate them. And a MoSCoW chart (Must Have, Should Have, Could Have, Won’t Have) that displayed what was needed to for an MVP (minimal viable product) and helped keep the project within scope.
 
 ## How I expected the challenge to go?
 I definitely expected it to be challenging as this was something that I had not fully done before. Some parts came naturally, where as other parts would require a little memory jog by going back and watching the lessons. The back-end part of the project was not so bad. However, the database and testing parts of the project provided to be the most challenging. They were a bit hard to get my head around and involved multiple questions and explanations to get a better understanding. Though I still do not fully understand the topics, my knowledge of them is a lot better now compared to previously.
