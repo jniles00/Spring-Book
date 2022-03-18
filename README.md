@@ -32,7 +32,7 @@ Having some form of security would have been a good addition. Much like the fron
 
 
 ## Links
-[Jira Board](https://jorden00.atlassian.net/jira/software/projects/STP/boards/2/roadmap) \n
+[Jira Board](https://jorden00.atlassian.net/jira/software/projects/STP/boards/2/roadmap)
 The user stories within the Jira board are marked out of 5. With 1 being the lowest/easiest and 5 being the highest/hardest.
 
 ## Screenshots
