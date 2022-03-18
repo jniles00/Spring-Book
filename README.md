@@ -2,12 +2,18 @@
 
 ## Why are we doing this?
 The purpose of this project was to demonstrate all the skills and tools we have acquired whilst on this bootcamp. This included:
-Agile methodology – being able to work 
+Agile methodology – being able to work in iterative steps.
+
 Jira – using a scrum board that kept track of tasks.
+
 Git – used for version control and project management.
+
 Java – object orientated proramming language that was used to create the back end for the API.
+
 Postman – used to call functions from the API.
+
 H2 – a database that was used to store the information from the back end.
+
 Created along with these were a Risk Assessment that identified any pontential risks and ways to mitigate them. And a MoSCoW chart (Must Have, Should Have, Could Have, Won’t Have) that displayed what was needed to for an MVP (minimal viable product) and helped keep the project within scope.
 
 ## How I expected the challenge to go?
