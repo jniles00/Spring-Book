@@ -2,6 +2,7 @@
 
 ## Why are we doing this?
 The purpose of this project was to demonstrate all the skills and tools we have acquired whilst on this bootcamp. This included:
+
 Agile methodology – being able to work in iterative steps.
 
 Jira – using a scrum board that kept track of tasks.
